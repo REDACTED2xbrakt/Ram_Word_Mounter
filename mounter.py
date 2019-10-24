@@ -21,6 +21,6 @@ def main():
 
 def ram_check(ram):
     print("[+] Displaying ram...")
-    subprocess.run(["free", "-g"])
+    ram_Free = subprocess.run(["free", "-g" , " | " , "grep" "<Args>"])
 
 main()
