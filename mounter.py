@@ -23,8 +23,9 @@ def main():
 
 def ram_check(ram):
     print("[+] Displaying ram...")
-    mem = psutil.available()
-    print(mem)
+    mem = psutil.virtual_memory()
+    mem_ava = mem.available
+    print("You have " mem_ava + " of ram free")
       
 def mounter(mount):
     mount_size = input("[*] Enter how much space you would like: ")
