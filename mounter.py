@@ -19,14 +19,15 @@ def main():
       else:
           print("[-] Invaled options")
     
-#Report on ram stats
+# -r Report on ram stats
 
 def ram_check(ram):
     print("[+] Displaying ram...")
     mem = psutil.virtual_memory()
     mem_ava = mem.available
     print("You have " mem_ava + " of ram free")
-      
+
+# -m Mount the ramdisk
 def mounter(mount):
     mount_size = input("[*] Enter how much space you would like: ")
     print("[+] Making directory in /mnt/ramdisk")
