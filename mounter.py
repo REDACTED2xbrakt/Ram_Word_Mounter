@@ -18,14 +18,10 @@ def main():
           ram_check(ram)
       else:
           print("[-] Invaled options")
-    
-# -r Report on ram stats
-
+ 
 def ram_check(ram):
     print("[+] Displaying ram...")
-    mem = psutil.virtual_memory()
-    mem_ava = mem.available
-    print("You have " + mem_ava + " of ram free")
+    subprocess.run(["free", "-g"])
    #needs changed to Gigs
 
 # -m Mount the ramdisk
