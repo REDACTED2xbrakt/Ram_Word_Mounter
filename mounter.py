@@ -29,7 +29,6 @@ def mounter(mount):
     mount_size = input("[*] Enter how much space you would like in gigabytes: ")
     print("[+] Making directory in /mnt/ramdisk")
     subprocess.run(["mkdir", "/mnt/ramdisk"])
-    mount_size = input()
     subprocess.run(["mount", "-t", "tmpfs", "-o", "size=<mount_size>", "tmpfs", "/mnt/ramdisk",])
     
 main()
