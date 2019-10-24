@@ -25,7 +25,8 @@ def ram_check(ram):
     print("[+] Displaying ram...")
     mem = psutil.virtual_memory()
     mem_ava = mem.available
-    print("You have " mem_ava + " of ram free")
+    print("You have " + mem_ava + " of ram free")
+   #needs changed to Gigs
 
 # -m Mount the ramdisk
 def mounter(mount):
