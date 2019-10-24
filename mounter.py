@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-
 import subprocess, argparse #modules needed
+
+# -ram argument
 
 def main():
       parser = argparse.ArgumentParser()
@@ -16,6 +17,7 @@ def main():
       else:
           print("[-] Invaled options")
     
+#Report on ram stats
 
 def ram_check(ram):
     print("[+] Displaying ram...")
