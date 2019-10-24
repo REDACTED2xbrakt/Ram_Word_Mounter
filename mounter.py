@@ -21,6 +21,6 @@ def main():
 
 def ram_check(ram):
     print("[+] Displaying ram...")
-    subprocess.run(["free", "-g"]) hshs
+    subprocess.run(["free", "-g"])
 
 main()
