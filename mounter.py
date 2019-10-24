@@ -27,6 +27,6 @@ def ram_check(ram):
       
 def mounter(mount):
     mount_size = input("[*] Enter how much space you would like: ")
-
-
+    print("[+] Making directory in /mnt/ramdisk")
+    subprocess.run(["mkdir", "/mnt/ramdisk"])
 main()
