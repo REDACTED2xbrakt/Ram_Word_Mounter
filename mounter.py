@@ -26,10 +26,9 @@ def ram_check(ram):
 
 # -m Mount the ramdisk
 def mounter(mount):
-    mount_size = input("[*] Enter how much space you would like: ")
+    mount_size = input("[*] Enter how much space you would like in gigabytes: ")
     print("[+] Making directory in /mnt/ramdisk")
     subprocess.run(["mkdir", "/mnt/ramdisk"])
-    print("Type partition size in gigabytes")
     mount_size = Input()
     subprocess.run(["mount", "-t", "tmpfs", "-o", "size=<mount_size>", "tmpfs", "/mnt/ramdisk",])
     
