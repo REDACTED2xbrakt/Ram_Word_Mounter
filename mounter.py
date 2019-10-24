@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import subprocess, argparse #modules needed
+import subprocess, argparse, psutil #modules needed
 
 # -ram argument
 
@@ -23,7 +23,8 @@ def main():
 
 def ram_check(ram):
     print("[+] Displaying ram...")
-    ram_Free = subprocess.run(["free", "-g" , " | " , "grep" "<Args>"])
+    mem = psutil.available()
+    print(mem)
       
 def mounter(mount):
     mount_size = input("[*] Enter how much space you would like: ")
