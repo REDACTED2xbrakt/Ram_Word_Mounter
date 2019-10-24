@@ -30,7 +30,7 @@ def mounter(mount):
     print("[+] Making directory in /mnt/ramdisk")
     subprocess.run(["mkdir", "/mnt/ramdisk"])
     print("Type partition size in gigabytes")
-    size_disk = Input()
-    subprocess.run(["mount", "-t", "tmpfs", "-o", "size=<size_disk>", "tmpfs", "/mnt/ramdisk",])
+    mount_size = Input()
+    subprocess.run(["mount", "-t", "tmpfs", "-o", "size=<mount_size>", "tmpfs", "/mnt/ramdisk",])
     
 main()
