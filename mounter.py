@@ -8,6 +8,7 @@ def main():
       parser.add_argument("-r", type=str, dest="ram", help="checks ram", default=None)
       parser.add_argument("-m", type=str, dest="mount", help="mounts space", default=None)
 
+
       args = parser.parse_args()
 
       ram = ""
@@ -32,6 +33,6 @@ def mounter(mount):
     print("[+] Making directory in /mnt/ramdisk")
     subprocess.run(["mkdir", "/mnt/ramdisk"])
     print("[+] Mounting " + mount_size + " to /mnt/ramdisk")
-    subprocess.run(["mount", "-t", "tmpfs", "-o", "size=", "tmpfs", "/mnt/ramdisk",])
+    subprocess.run(["mount", "-t", "tmpfs", "-o", "size=" + mount_size, "tmpfs", "/mnt/ramdisk",])
 
 main()
