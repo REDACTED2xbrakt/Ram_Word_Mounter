@@ -6,6 +6,8 @@ import subprocess, argparse #modules needed
 def main():
       parser = argparse.ArgumentParser()
       parser.add_argument("-r", type=str, dest="ram", help="checks ram", default=None)
+      parser.add_argument("-m", type=str, dest="mount", help="mounts space", default=None)
+
 
       args = parser.parse_args()
 
