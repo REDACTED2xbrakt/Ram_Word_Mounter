@@ -1,18 +1,13 @@
 #!/usr/bin/python3
-import subprocess, argparse, psutil #modules needed
-
-# -ram argument
+import subprocess, argparse
 
 def main():
       parser = argparse.ArgumentParser()
-      parser.add_argument("-r", type=str, dest="ram", help="checks ram", default=None)
-      parser.add_argument("-m", type=str, dest="mount", help="mounts space", default=None)
-
+      parser.add_argument("-ram", type=str, dest="ram", help="checks ram", default=None)
+      parser.add_argument("-mount", type=str, dest="mount", help="mounts space", default=None)
 
       args = parser.parse_args()
 
-      ram = ""
-      mount = ""
       ram = args.ram
       mount = args.mount
 
@@ -21,9 +16,8 @@ def main():
       elif mount:
           mounter(mount)
       else:
-          print("[-] Invaled options")
+          print("[-] Invalid option try -h for help")
     
-#Report on ram stats
 def ram_check(ram):
     print("[+] Displaying ram...")
     subprocess.run(["free", "-g"])
@@ -34,5 +28,11 @@ def mounter(mount):
     subprocess.run(["mkdir", "/mnt/ramdisk"])
     print("[+] Mounting " + mount_size + " to /mnt/ramdisk")
     subprocess.run(["mount", "-t", "tmpfs", "-o", "size=" + mount_size, "tmpfs", "/mnt/ramdisk",])
+    print("[+] Done!")
+    wordlist = input("[*] Enter wordlist you would like to put in the ram: ")
+    subprocess.run(["cp", wordlist])
+    print("[+] Done!")
+
 
 main()
+
