@@ -11,12 +11,13 @@ def main():
 
       ram = args.ram
       mount = args.mount
+      word = args.word
 
       if ram:
           ram_check(ram)
       elif mount:
           mounter(mount)
-      elif wordlist:
+      elif word:
           wordlist(word)
       else:
           print("[-] Invalid option try -h for help")
