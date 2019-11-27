@@ -16,7 +16,7 @@ def main():
           ram_check(ram)
       elif mount:
           mounter(mount)
-      elif mount:
+      elif wordlist:
           wordlist(word)
       else:
           print("[-] Invalid option try -h for help")
