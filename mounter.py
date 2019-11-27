@@ -16,6 +16,8 @@ def main():
           ram_check(ram)
       elif mount:
           mounter(mount)
+      elif mount:
+          wordlist(word)
       else:
           print("[-] Invalid option try -h for help")
     
@@ -30,7 +32,7 @@ def mounter(mount):
     print("[+] Mounting " + mount_size + "gb ramdisk to /mnt/ramdisk")
     subprocess.run(["mount", "-t", "tmpfs", "-o", "size=" + mount_size + "g", "tmpfs", "/mnt/ramdisk",])
     print("[+] Done!")
-def mounter(word):
+def wordlist(word):
     wordlist = input("[*] Enter the directory of the wordlist you would like to put in the ram: ")
     subprocess.run(["cp", wordlist, "/mnt/ramdisk/"])
     print("[+] Done!")
