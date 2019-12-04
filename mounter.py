@@ -3,9 +3,9 @@ import subprocess, argparse
 
 def main():
       parser = argparse.ArgumentParser()
-      parser.add_argument("-r", type=str, dest="ram", help="checks ram", default=None)
-      parser.add_argument("-m", type=str, dest="mount", help="mounts ramdisk", default=None)
-      parser.add_argument("-w", type=str, dest="word", help="copies wordlist to ram", default=None)
+      parser.add_argument("-r", type=str, dest="ram", help="checks ram", default=None, action='store_true')
+      parser.add_argument("-m", type=str, dest="mount", help="mounts ramdisk", default=None, action='store_true')
+      parser.add_argument("-w", type=str, dest="word", help="copies wordlist to ram", default=None, action='store_true')
 
       args = parser.parse_args()
 
